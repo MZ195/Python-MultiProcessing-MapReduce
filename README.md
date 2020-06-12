@@ -22,6 +22,8 @@ For this project we used 8,000 RFC documents from the `Internet Society (ISOC)`.
 https://www.rfc-editor.org/rfc/
 
 You can download a compress version from here https://drive.google.com/file/d/1YRfZAVLs2HXFvC1s4NZUx163LiXtRkAt/view?usp=sharing
+
+
 `Main.py` Will read all filenames in a given directory, create a mapper, then hand over the documents to the mapper.
 
 `MapReduce.py` is a class used to create mappers, you need to provide both map and reduce functions.
