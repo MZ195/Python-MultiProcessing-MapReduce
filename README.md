@@ -27,7 +27,7 @@ The purpose of this project is to illustrate how easy it is to break some proble
 For this project we used 8,000 RFC documents from the `Internet Society (ISOC)`.
 https://www.rfc-editor.org/rfc/
 
-You can download a compress version from here shorturl.at/msDK3
+You can download a compress version from here https://shorturl.at/msDK3
 
 
 `Main.py` Will read all filenames in a given directory, create a mapper, then hand over the documents to the mapper.
