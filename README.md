@@ -34,6 +34,8 @@ You can download a compress version from here https://drive.google.com/file/d/1Y
 ## OUTPUT SAMPLES
 
 This section will show output samples of some functions for better understating of the process.
+
+
 `count_words function`
 >('network', 7)
 ('working', 1)
