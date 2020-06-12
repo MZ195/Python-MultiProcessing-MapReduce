@@ -11,9 +11,9 @@ Finally, the partitioned data is reduced to a result set
 ## PROJECT DESCRIPTION
 
 The Pool class can be used to create a simple single-server MapReduce implementation.
-Using local machine cores as node, we can simulate the behaviour of a cluster.
+Using local machine cores as node, we can simulate the behavior of a cluster.
 The input data will be RFC documents and the goal is to count the words and display TOP 20 most frequent words.
-The purpose of this project is to illustrate how easy it is to break some problems down into distributable units of work.
+The purpose of this project is to illustrate how easy it is to break some problems down into distributed units of work.
 
 
 ## PROJECT STRUCTURE
@@ -21,6 +21,7 @@ The purpose of this project is to illustrate how easy it is to break some proble
 For this project we used 8,000 RFC documents from the `Internet Society (ISOC)`.
 https://www.rfc-editor.org/rfc/
 
+You can download a compress version from here https://drive.google.com/file/d/1YRfZAVLs2HXFvC1s4NZUx163LiXtRkAt/view?usp=sharing
 `Main.py` Will read all filenames in a given directory, create a mapper, then hand over the documents to the mapper.
 
 `MapReduce.py` is a class used to create mappers, you need to provide both map and reduce functions.
@@ -30,7 +31,7 @@ https://www.rfc-editor.org/rfc/
 
 ## OUTPUT SAMPLES
 
-This section will show output samples of some functions for better understaing of the process.
+This section will show output samples of some functions for better understating of the process.
 `count_words function`
 >('network', 7)
 ('working', 1)
