@@ -4,7 +4,6 @@ from time import time
 from MapReduce import MapReduce
 from MultiprocessHelper import file_to_words, count_words
 
-
 def main():
 
     print("Reading files...")
@@ -12,7 +11,7 @@ def main():
     
     START_TIME = time()
     mapper = MapReduce(file_to_words, count_words)
-    word_counts = mapper(input_files)
+    word_counts, MAPPING_TIME, REFORMATING_TIME, REDUCING_TIME = mapper(input_files)
     word_counts.sort(key=operator.itemgetter(1))
     word_counts.reverse()
     
@@ -25,6 +24,9 @@ def main():
     
     END_TIME = time()
 
+    print("\nMapping time = {} ms".format(MAPPING_TIME))
+    print("Reformatting time = {} ms".format(REFORMATING_TIME))
+    print("Reducing time = {} ms".format(REDUCING_TIME))
     print("Total running time = {} ms".format(END_TIME - START_TIME))
 
 

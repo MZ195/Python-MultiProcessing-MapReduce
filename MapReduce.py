@@ -1,7 +1,7 @@
 import sys
 import itertools
 import collections
-from time import time
+from timeit import default_timer as timer
 import multiprocessing
 
 
@@ -48,25 +48,23 @@ class MapReduce(object):
           You can fine tune the number to your specific machine.
         """
         print("Mapping...")
-        START_TIME = time()
+
+        start = timer()
         map_responses = self.pool.map(self.map_func, inputs, chunksize=chunksize)
-        END_TIME = time()
-        print("\nMapping time = {} ms\n".format(END_TIME - START_TIME))
+        MAPPING_TIME = timer() - start
         
         print("Formatting...")
-        START_TIME = time()
+
+        start = timer()
         partitioned_data = self.partition(itertools.chain(*map_responses))
-        END_TIME = time()
-        print("\nReformatting time = {} ms\n".format(END_TIME - START_TIME))
-        
+        REFORMATING_TIME = timer() - start
         del map_responses
 
         print("Reducing...")
-        START_TIME = time()
+
+        start = timer()
         reduced_values = self.pool.map(self.reduce_func, partitioned_data)
-        END_TIME = time()
-        print("\nReducing time = {} ms\n".format(END_TIME - START_TIME))
-        
+        REDUCING_TIME = timer() - start
         del partitioned_data
 
-        return reduced_values
+        return reduced_values, MAPPING_TIME, REFORMATING_TIME, REDUCING_TIME
