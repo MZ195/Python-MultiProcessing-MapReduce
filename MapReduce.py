@@ -1,3 +1,4 @@
+import sys
 import itertools
 import collections
 from time import time
@@ -57,11 +58,15 @@ class MapReduce(object):
         partitioned_data = self.partition(itertools.chain(*map_responses))
         END_TIME = time()
         print("\nReformatting time = {} ms\n".format(END_TIME - START_TIME))
+        
+        del map_responses
 
         print("Reducing...")
         START_TIME = time()
         reduced_values = self.pool.map(self.reduce_func, partitioned_data)
         END_TIME = time()
         print("\nReducing time = {} ms\n".format(END_TIME - START_TIME))
+        
+        del partitioned_data
 
         return reduced_values
