@@ -23,8 +23,7 @@ def file_to_words(filename, file_dir = 'Data'):
                 word = word.lower()
                 if word.isalpha() and word not in STOP_WORDS and len(word) > 1:
                     output.append((word, 1))
-                del word
-            del line
+                    
     return output
 
 
