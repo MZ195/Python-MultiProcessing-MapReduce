@@ -2,24 +2,32 @@
 
 ## INTRODUCTION
 
-In a MapReduce-based system, input data is broken down into chunks for processing by different worker instances. 
+In a MapReduce-based system, input data is broken down into chunks for processing by different worker instances.
+
 Each chunk of input data is mapped to an intermediate state using a simple transformation.
-The intermediate data is then collected together and partitioned based on a key value so that all of the related values are together. 
+
+The intermediate data is then collected together and partitioned based on a key value so that all of the related values are together.
+
 Finally, the partitioned data is reduced to a result set
 
 
 ## PROJECT DESCRIPTION
 
 The Pool class can be used to create a simple single-server MapReduce implementation.
-Using local machine cores as node, we can simulate the behaviour of a cluster.
+
+Using local machine cores as node, we can simulate the behavior of a cluster.
+
 The input data will be RFC documents and the goal is to count the words and display TOP 20 most frequent words.
-The purpose of this project is to illustrate how easy it is to break some problems down into distributable units of work.
+
+The purpose of this project is to illustrate how easy it is to break some problems down into distributed units of work.
 
 
 ## PROJECT STRUCTURE
 
-For this project we used 8,000 RFC documents from the `Internet Society (ISOC)`.
-https://www.rfc-editor.org/rfc/
+For this project we used 8,000 RFC documents from the [`Internet Society (ISOC)`](https://www.rfc-editor.org/rfc/)
+
+You can download a compress version from [here](https://shorturl.at/msDK3)
+
 
 `Main.py` Will read all filenames in a given directory, create a mapper, then hand over the documents to the mapper.
 
@@ -30,19 +38,7 @@ https://www.rfc-editor.org/rfc/
 
 ## OUTPUT SAMPLES
 
-This section will show output samples of some functions for better understaing of the process.
-`count_words function`
->('network', 7)
-('working', 1)
-('group', 2)
-('design', 6)
-('construct', 1)
-('host', 8)
-('imp', 8)
-('interface', 2)
-('develop', 4)
-('trial', 2)
-('review', 1)
+This section will show output samples of some functions for better understating of the process.
 
 `fie_to_words function`
 >('network', 1)
@@ -57,6 +53,7 @@ This section will show output samples of some functions for better understaing o
 ('institute', 1)
 ('category', 1)
 
+
 `partition function`
 >('gear', [1, 1, 1])
 ('from', [1, 1, 1, 1, 1, 1, 1])
@@ -70,3 +67,16 @@ This section will show output samples of some functions for better understaing o
 ('on', [1, 1, 1, 1, 1])
 ('voice', [1, 1, 1, 1, 1])
 ('coordination', [1, 1, 1, 1])
+
+`count_words function`
+>('network', 7)
+('working', 1)
+('group', 2)
+('design', 6)
+('construct', 1)
+('host', 8)
+('imp', 8)
+('interface', 2)
+('develop', 4)
+('trial', 2)
+('review', 1)
