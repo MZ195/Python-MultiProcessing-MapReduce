@@ -24,7 +24,7 @@ The purpose of this project is to illustrate how easy it is to break some proble
 
 ## PROJECT STRUCTURE
 
-For this project we used 8,000 RFC documents from the [`Internet Society (ISOC)`](https://www.rfc-editor.org/rfc/)
+For this project we used 8,000 RFC documents from [`Internet Society (ISOC)`](https://www.rfc-editor.org/rfc/)
 
 You can download a compress version from [here](https://shorturl.at/msDK3)
 
