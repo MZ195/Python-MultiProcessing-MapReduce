@@ -47,6 +47,7 @@ class MapReduce(object):
           The portion of the input data to hand to each worker.
           You can fine tune the number to your specific machine.
         """
+
         print("Mapping...")
 
         start = timer()

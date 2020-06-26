@@ -1,6 +1,7 @@
 import os
 import string
 import multiprocessing
+import time
 
 STOP_WORDS = set([
             'a', 'an', 'and', 'are', 'as', 'be', 'by', 'for', 'if', 'in', 
@@ -23,7 +24,7 @@ def file_to_words(filename, file_dir = 'Data'):
                 word = word.lower()
                 if word.isalpha() and word not in STOP_WORDS and len(word) > 1:
                     output.append((word, 1))
-                    
+
     return output
 
 
